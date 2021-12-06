@@ -9,3 +9,12 @@ O que aprendemos nesta aula:
 - O que é um gen;
 - Testar valores dinâmicos;
 - Ver inconsistências no nosso código.
+
+## Aula 02
+
+O que aprendemos nesta aula:
+
+- O que o for-all faz;
+- O que é o prop;
+- Explorar a abordagem de gerar valores e ver se eles são iguais;
+- Fazer um teste generativo.
