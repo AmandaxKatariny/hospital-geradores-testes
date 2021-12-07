@@ -18,3 +18,12 @@ O que aprendemos nesta aula:
 - O que é o prop;
 - Explorar a abordagem de gerar valores e ver se eles são iguais;
 - Fazer um teste generativo.
+
+## Aula 03
+
+O que aprendemos nesta aula:
+
+- Fazer um prop para as propriedades;
+- Conceitos sobre teste de propriedade;
+- Fazer um Join;
+- Testar o nosso fluxo de métodos;
