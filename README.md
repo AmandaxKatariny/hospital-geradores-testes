@@ -36,7 +36,6 @@ O que aprendemos nesta aula:
 - Utilizar o reduce dentro de uma coleção;
 - Determinar os valores que vão ser gerados.
 
-
 ## Aula 05
 
 O que aprendemos nesta aula:
@@ -44,4 +43,3 @@ O que aprendemos nesta aula:
 - Fazer uma exceção de acordo com os dados dela;
 - Utilizar o catch-data;
 - Utilizar o maybe;
-
