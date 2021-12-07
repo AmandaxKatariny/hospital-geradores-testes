@@ -27,3 +27,11 @@ O que aprendemos nesta aula:
 - Conceitos sobre teste de propriedade;
 - Fazer um Join;
 - Testar o nosso fluxo de métodos;
+- 
+## Aula 04
+
+O que aprendemos nesta aula:
+
+- Ignorar erros dentro dos testes;
+- Utilizar o reduce dentro de uma coleção;
+- Determinar os valores que vão ser gerados.

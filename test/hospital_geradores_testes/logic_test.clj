@@ -83,6 +83,12 @@
     transforma-vetor-em-fila
     (gen/vector nome-aleatorio 0 4)))
 
+(defn transfere-ignorando-erro [hospital de para]
+  (try
+    (transfere hospital de para)
+    (catch clojure.lang.ExceptionInfo e
+      hospital)))
+
 (defspec transfere-tem-que-manter-a-quantidade-de-pessoas 5
          (prop/for-all
            [espera fila-nao-cheia-gen
@@ -91,9 +97,8 @@
             vai-para (gen/elements [:raio-x :ultrasom])
             ]
            (let [hospital-inicial {:espera espera, :raio-x raio-x, :ultrasom ultrasom}
-                 hospital-final (transfere hospital-inicial :espera vai-para)]
+                 hospital-final (transfere-ignorando-erro hospital-inicial :espera vai-para)]
              (= (total-de-pacientes hospital-inicial)
                 (total-de-pacientes hospital-final))
              )
            ))
-
