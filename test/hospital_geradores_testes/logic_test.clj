@@ -119,7 +119,7 @@
 (defspec transfere-tem-que-manter-a-quantidade-de-pessoas 50
          (prop/for-all
            [
-            espera (gen/fmap transforma-vetor-em-fila (gen/vector nome-aleatorio 0 50))
+            espera (gen/fmap transforma-vetor-em-fila (gen/vector nome-aleatorio-gen 0 50))
             raio-x fila-nao-cheia-gen
             ultrasom fila-nao-cheia-gen
             vai-para (gen/vector (gen/elements [:raio-x :ultrasom]) 0 50)
@@ -128,6 +128,20 @@
            (let [hospital-inicial {:espera espera, :raio-x raio-x, :ultrasom ultrasom}
                  hospital-final (reduce transfere-ignorando-erro hospital-inicial vai-para)]
              (= (total-de-pacientes hospital-inicial)
-                (total-de-pacientes hospital-final))
-             )
-           ))
+                (total-de-pacientes hospital-final)))))
+
+
+(defn adiciona-fila-de-espera [[hospital fila]]
+  (assoc hospital :espera fila))
+
+(def hospital-gen
+  (gen/fmap
+    adiciona-fila-de-espera
+    (gen/tuple (gen/not-empty (g/generator h.model/Hospital))
+               fila-nao-cheia-gen)))
+
+(defspec simula-um-dia-do-hospital-nao-perde-pessoas 10
+         (prop/for-all [hospital hospital-gen]
+                       (pprint hospital)
+                       (is (= 1 1))))
+))

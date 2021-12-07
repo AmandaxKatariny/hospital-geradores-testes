@@ -43,3 +43,13 @@ O que aprendemos nesta aula:
 - Fazer uma exceção de acordo com os dados dela;
 - Utilizar o catch-data;
 - Utilizar o maybe;
+
+## Aula 06
+
+O que aprendemos nesta aula:
+
+- Criar eventos;
+- Utilizar um schema generator;
+- Utilizar o g/generate para gerar conforme o schema que temos;
+- Utilizar o gen/not-empty;
+- Utilizar o one-of;
