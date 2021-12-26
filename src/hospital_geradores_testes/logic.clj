@@ -26,16 +26,16 @@
       departamento
       peek))
 
-(defn mesmo-tamanho? [hospital, outro-hospital, de, para]
+(defn mesmo-tamanho?
+  [hospital, outro-hospital, de, para]
   (= (+ (count (get outro-hospital de)) (count (get outro-hospital para)))
      (+ (count (get hospital de)) (count (get hospital para)))))
 
 (s/defn transfere :- h.model/Hospital
   "Transfere o próximo paciente da fila de para a fila para"
   [hospital :- h.model/Hospital, de :- s/Keyword, para :- s/Keyword]
-  {:pre  [(contains? hospital de), (contains? hospital para)]
-   :post [(mesmo-tamanho? hospital % de para)]
-   }
+  {:pre [(contains? hospital de), (contains? hospital para)]
+   :post [(mesmo-tamanho? hospital % de para)]}
   (if-let [pessoa (proxima hospital de)]
     (-> hospital
         (atende de)

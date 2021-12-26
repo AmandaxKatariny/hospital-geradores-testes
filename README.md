@@ -53,3 +53,12 @@ O que aprendemos nesta aula:
 - Utilizar o g/generate para gerar conforme o schema que temos;
 - Utilizar o gen/not-empty;
 - Utilizar o one-of;
+
+
+## Aula 07
+
+O que aprendemos nesta aula:
+
+- Definir o delta para o teste;
+- Ver a igualdade dos valores após finalizar o teste;
+- Garantir que nossos testes funcionem.
